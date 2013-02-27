@@ -1,0 +1,10 @@
+# 
+# common options 
+
+CONFIG_LOCALVERSION="-opteron-no-hst"
+
+opteron==CONFIG_MK8
+intelp4=CONFIG_MPSC
+core2=CONFIG_MCORE2
+atom=CONFIG_MATOM
+generic=CONFIG_GENERIC_CPU
