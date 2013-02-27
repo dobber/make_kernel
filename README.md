@@ -11,13 +11,13 @@ How it works
 
 Open up the configuration file and add the options you want to use following the example there. Then:
 
- # cd /path/to/your/kernel/
- # make_kernel -s "CompanyA" -o opteron virtio ipv6
+	cd /path/to/your/kernel/
+	make_kernel -s "CompanyA" -o opteron virtio ipv6
 
 If you set an option in the config file but didn't specificaly called it in the command line the script will NOT CHANGE anything.
 
 Options
 ===========
- -s suffix
- -o list of predefined kernel options
- -h help
+	-s suffix
+	-o list of predefined kernel options
+	-h help
