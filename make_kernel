@@ -2,3 +2,53 @@
 
 use strict;
 use warnings;
+use Getopt::Std;
+use File::Basename;
+
+my $basename = basename ($0);
+my $conffile="config";
+my @newfile;
+
+our $opt_h=0; 
+our $opt_m=0;
+
+# print help message
+sub print_usage () {
+    print "Usage: $basename -m [list of options]\n";
+    print "\t-m\tAppend a list of options\n";
+    print "\t-h\tShow this help message\n";
+}
+
+getopts('hm');
+
+if ($opt_h == "1") {
+    $opt_h='';
+    print_usage();
+    exit (0);
+} elsif ($opt_m == "1") {
+    $opt_m='';
+    foreach (@ARGV) {
+	# check options in mkconfig
+	# exit if option does not exist
+	# check options from config to .config
+	# replace # OPT to OPT=y
+	print "$_\n";
+    }
+    exit (0);
+} else {
+    print_usage();
+    exit(0);
+}
+
+
+open (FH,$conffile) or die "Cannot open config file: $!\n";
+while (<FH>) {
+    $_ =~ s/^\# CONFIG_MK8 is not set/CONFIG_MK8=y/;
+    push (@newfile, "$_");
+}
+close (FH);
+
+open (FH, ">",  $conffile) or die "Cannot open config file: $!\n";
+print FH "@newfile";
+close (FH);
+

@@ -5,6 +5,7 @@ Compile a set of kernels with a set of predefined options/suffixes.
 
 If you are constantly finding yourself recompiling kernels and just changing one or two options like cpu type and virtio support, this script is just for you.
 
+Predefine your most commonly changed .config options and you are good to go.
 
 How it works
 ===========

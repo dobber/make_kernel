@@ -1,4 +1,5 @@
-# 
+# for NOW does NOT work with options with predefined value like CONFIG_DEFAULT_IOSCHED="cfq"
+# DEPENDENCIES .... fuck shit ;(
 # common options 
 
 CONFIG_LOCALVERSION="-opteron-no-hst"
@@ -8,3 +9,4 @@ intelp4=CONFIG_MPSC
 core2=CONFIG_MCORE2
 atom=CONFIG_MATOM
 generic=CONFIG_GENERIC_CPU
+virtio=CONFIG_VIRTIO
